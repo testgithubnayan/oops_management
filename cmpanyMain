@@ -1,0 +1,53 @@
+package com.brigelabz;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+
+public class companyMain {
+	public enum Company {
+		employeeList
+		;
+
+		void addEmployee() {
+			
+			
+		}
+
+	}
+
+	static final String TCS = "labz ";
+    static final String WIPRO = "WIPRO ";
+	
+
+    public static void main(String[] args) {
+        int userInput;
+        Map <String,Company> companyBookMap = new HashMap<>();
+      Employee employee = new Employee();
+       
+        Scanner scan = new Scanner(System.in);
+        do{
+            System.out.println("Enter 1 to Add Employee to TCS Company\n Enter 2 to Add Employee to Wipro\nEnter x to Exit ");
+            userInput = scan.nextInt();
+            switch (userInput){
+                case 1:
+                    labz.addEmployee();
+                    System.out.println(labz.employeeList);
+                    break;
+                case 2:
+                    wipro.addEmployee();
+                    System.out.println(wipro.employeeList);
+                default:
+                    System.out.println("Exi frtom Program");
+            }
+        }
+        while(userInput != 0);
+
+        companyBookMap.put(labz, tcs);
+        companyBookMap.put(WIPRO, wipro);
+
+        System.out.println(companyBookMap.toString());
+        
+    }
